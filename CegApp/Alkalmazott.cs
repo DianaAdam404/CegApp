@@ -4,7 +4,25 @@ using System.Text;
 
 namespace CegApp
 {
-    internal class Alkalmazott
+    public class Alkalmazott
     {
+        public string Nev { get; set; }
+        protected int Alapber;
+
+        public Alkalmazott(string nev, int alapber)
+        {
+            Nev = nev;
+            Alapber = alapber;
+        }
+
+        public virtual int FizetesSzamitas()
+        {
+            return Alapber;
+        }
+
+        public override string ToString()
+        {
+            return $"Név: {Nev}, Fizetés: {FizetesSzamitas()} Ft";
+        }
     }
 }
